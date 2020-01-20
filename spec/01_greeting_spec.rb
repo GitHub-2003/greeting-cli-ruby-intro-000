@@ -24,11 +24,11 @@ describe './lib/greeting.rb' do
       allow($stdout).to receive(:puts)
 
       output = capture_puts{ greeting(" Sally\t   ") }
-
       # puts adds a newline to the output. Without using print, students
       # will not be able to remove the \n character at the end of the phrase
       # Strip is being used on the output for this purpose
       expect(output.strip).to eq("Hello Sally. It's nice to meet you.")
+      expect(output).to eq("Hello Sally. It's nice to meet you.")
     end
   end
 end
